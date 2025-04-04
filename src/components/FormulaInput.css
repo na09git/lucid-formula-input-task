@@ -1,50 +1,118 @@
-/* src/components/FormulaInput.css */
 .formula-input-container {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.formula-input-container .MuiTextField-root {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.formula-input-container .MuiTextField-root .MuiInputBase-input {
+  font-family: 'Courier New', Courier, monospace; /* Monospace for formula input */
+  font-size: 16px;
+}
+
+.formula-display {
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 16px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  cursor: pointer;
+  min-height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-container {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0e0e0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.tag {
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+.operand {
+  color: #d32f2f; /* Red for operators */
+  font-weight: bold;
+}
+
+.dropdown-trigger {
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+  user-select: none;
+}
+
+.dropdown-trigger:hover {
+  color: #000;
+}
+
+.result {
+  font-size: 16px;
+  color: #2e7d32; /* Green for results */
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.MuiButton-root {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.MuiMenuItem-root {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: #f5f5f5;
+}
+
+/* Error and Success Messages */
+.MuiSnackbar-root {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.MuiAlert-root {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+/* Ensure the formula display scrolls if too long */
+.formula-display {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .formula-input-container {
+    padding: 8px;
   }
-  
-  .formula-display {
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    cursor: pointer;
+
+  .MuiTextField-root {
+    width: 100%;
   }
-  
-  .tag-container {
-    display: inline-flex;
-    align-items: center;
-    margin: 2px;
+
+  .MuiButton-root {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 8px;
   }
-  
-  .tag {
-    background-color: #e0e0e0;
-    padding: 4px 8px;
-    border-radius: 4px 0 0 4px;
-  }
-  
-  .tag.operand {
-    background-color: #f0f0f0;
-  }
-  
-  .dropdown-trigger {
-    background-color: #e0e0e0;
-    padding: 4px 6px;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    font-size: 12px;
-  }
-  
-  .dropdown-trigger:hover {
-    background-color: #d0d0d0;
-  }
-  
-  .result {
-    margin-top: 10px;
-    font-weight: bold;
-  }
+}
